@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>我的第一个博客</title>
+    <url>/2023/09/10/first-blog/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>主要内容</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>欢迎来到我的博客,我将会记录我一些学习Java，易语言等的笔记与记录</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>我的第二个博客</title>
+    <url>/2023/09/10/second-blog/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>本文。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2>]]></content>
+  </entry>
+</search>
