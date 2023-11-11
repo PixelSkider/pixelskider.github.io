@@ -1167,7 +1167,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f1007c;
+  background: #ff20d2;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2366,4 +2366,7 @@ hr {
 }
 .main-inner {
   opacity: 0.85;
+}
+.project {
+  background-image: url("/project.svg");
 }
