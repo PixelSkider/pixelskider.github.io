@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kalud's Website</title>
-    <link rel="icon" href="./icon.png" sizes="16x16">
+    <title>Kalud的网站</title>
+    <link rel="icon" href="../resource/icon.png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
 </head>
 
 <style>
@@ -21,11 +20,10 @@
 
     div.body {
         width: 100%;
-        height: 25px;
+        height: 50px;
         text-align: center;
-        transform: translateY(800%);
-        -webkit-animation:light 1.5s ease-in-out infinite alternate;
-        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        transform: translateY(500%);
+	    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 	    font-size: 25px;
     }
 
@@ -42,7 +40,7 @@
         font-size: 14px;
         border: 0px;
         padding: 10px;
-        background: #fff;
+        background: #ffff;
         text-decoration: none;
         border-radius: 6px;
         transition-duration: 0.8s;
@@ -54,42 +52,13 @@
         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 
-    @-webkit-keyframes light{
-		   from{
-		       text-shadow:0 0 10px #E8CCFF,
-		            0 0 20px #E8CCFF,
-		            0 0 30px #E8CCFF,
-                    0 0 40px #F0BBFF,
-		            0 0 70px #F0BBFF,
-		            0 0 80px #F0BBFF,
-		            0 0 100px #F0BBFF,
-		            0 0 150px #F0BBFF;
-		   }
-		   to{
-		       text-shadow:0 0 5px #E8CCFF,
-		             0 0 10px #E8CCFF,
-		             0 0 15px #E8CCFF,
-		             0 0 20px #F0BBFF,
-		             0 0 35px #F0BBFF,
-		             0 0 40px #F0BBFF,
-		             0 0 50px #F0BBFF,
-		             0 0 75px #F0BBFF;
-		   }
-    }
-
     iframe{
         width: 330px;
         height: 80px;
         float:right;
         border: 0px;
-        transform: translateY(750%);
+        transform: translateY(900%);
         float:right;
-    }
-
-    img{
-        width: 250px;
-        height: 150px;
-        transform: translateY(450%);
     }
 
 </style>
@@ -97,15 +66,14 @@
 <body>
 
 <div class="header">
-    <button class="button" type="button" onclick = 'location.href=("Home.html")'>Home</button>
-    <button class="button" type="button" onclick = 'location.href=("About.html")'>About</button>
-    <button class="button" type="button" onclick = 'location.href=("Project.html")'>Project</button>
+    <button class="button" type="button" onclick = 'location.href=("../zh-hans/Home.html")'>主页</button>
+    <button class="button" type="button" onclick = 'location.href=("../zh-hans/About.html")'>关于</button>
+    <button class="button" type="button" onclick = 'location.href=("../zh-hans/Project.html")'>项目</button>
 </div>
 
-<div class="Animation"><img src="Animation.gif" alt="" /></div>
-
 <div class="body">
-    Hi👋,Welcome my blog
+    这里有些关于我的信息,我是一个中国学生. <br />
+    我喜欢编程和游玩沙盒游戏还有射击游戏,例如mc csgo pubg.<br />
 </div>
 
 <iframe src="//music.163.com/outchain/player?type=2&id=489970551&auto=0&height=66"></iframe>
