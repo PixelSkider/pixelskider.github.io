@@ -16,7 +16,7 @@
     div.header{
         width: 100%;
         height: 40px;
-        text-align:center;
+        text-align: center;
     }
 
     div.body {
@@ -26,61 +26,72 @@
         transform: translateY(800%);
         -webkit-animation:light 1.5s ease-in-out infinite alternate;
         font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	    font-size: 25px;
+        font-size: 25px;
     }
 
-    button {
-        background: #3498db;
-        background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-        background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-        background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-        background-image: -o-linear-gradient(top, #3498db, #2980b9);
-        background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    button.button {
         text-shadow: 1px 1px 3px #666666;
         font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-        color: #000;
         font-size: 14px;
+        color: #000;
         border: 0px;
         padding: 10px;
         background: #fff;
-        text-decoration: none;
         border-radius: 6px;
         transition-duration: 0.8s;
     }
 
-    button:hover {
+    button.button:hover {
         background: #FFF0F5;
-        text-decoration: none;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    button.button-language {
+        text-shadow: 1px 1px 3px #666666;
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #000;
+        border: 0px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 6px;
+        transition-duration: 0.8s;
+        right:0px;
+        top:0px;
+        position:absolute;
+    }
+
+    button.button-language:hover {
+        background: #FFF0F5;
         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 
     @-webkit-keyframes light{
-		   from{
-		       text-shadow:0 0 10px #E8CCFF,
-		            0 0 20px #E8CCFF,
-		            0 0 30px #E8CCFF,
-                    0 0 40px #F0BBFF,
-		            0 0 70px #F0BBFF,
-		            0 0 80px #F0BBFF,
-		            0 0 100px #F0BBFF,
-		            0 0 150px #F0BBFF;
-		   }
-		   to{
-		       text-shadow:0 0 5px #E8CCFF,
-		             0 0 10px #E8CCFF,
-		             0 0 15px #E8CCFF,
-		             0 0 20px #F0BBFF,
-		             0 0 35px #F0BBFF,
-		             0 0 40px #F0BBFF,
-		             0 0 50px #F0BBFF,
-		             0 0 75px #F0BBFF;
-		   }
+        from{
+            text-shadow:0 0 10px #E8CCFF,
+            0 0 20px #E8CCFF,
+            0 0 30px #E8CCFF,
+            0 0 40px #F0BBFF,
+            0 0 70px #F0BBFF,
+            0 0 80px #F0BBFF,
+            0 0 100px #F0BBFF,
+            0 0 150px #F0BBFF;
+        }
+        to{
+            text-shadow:0 0 5px #E8CCFF,
+            0 0 10px #E8CCFF,
+            0 0 15px #E8CCFF,
+            0 0 20px #F0BBFF,
+            0 0 35px #F0BBFF,
+            0 0 40px #F0BBFF,
+            0 0 50px #F0BBFF,
+            0 0 75px #F0BBFF;
+        }
     }
 
     iframe{
         width: 330px;
         height: 80px;
-        float:right;
         border: 0px;
         transform: translateY(750%);
         float:right;
@@ -92,6 +103,39 @@
         transform: translateY(450%);
     }
 
+    .dropdown {
+        position: relative;
+        float:right;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        top:37px;
+        right:0px;
+        border-radius: 6px;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 80px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: black;
+        padding: 12px 16px;
+        min-height: 20px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {
+
+        display: block;
+    }
+
 </style>
 
 <body>
@@ -100,6 +144,14 @@
     <button class="button" type="button" onclick = 'location.href=("Home.html")'>Home</button>
     <button class="button" type="button" onclick = 'location.href=("About.html")'>About</button>
     <button class="button" type="button" onclick = 'location.href=("Project.html")'>Project</button>
+
+    <div class="dropdown">
+        <button class="button-language">Language</button>
+        <div class="dropdown-content">
+            <a href="../zh-hans/Home.html">ZH</a>
+            <a href="../en-us/Home.html">US</a>
+        </div>
+    </div>
 </div>
 
 <div class="Animation"><img src="../resource/Animation.gif" alt="" /></div>
