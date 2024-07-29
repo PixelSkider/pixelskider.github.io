@@ -1,171 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Kalud's Website</title>
-    <link rel="icon" href="../resource/icon.png" sizes="16x16">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-</head>
+    <link rel="icon" href="../resource/icon.png" sizes="16x16" />
+    <link rel="stylesheet" href="../css/project.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+  </head>
 
-<style>
-    body{
-        background-color: #F1F1F1;
-    }
+  <body>
+    <div class="header">
+      <button
+        class="button"
+        type="button"
+        onclick='location.href=("../en-us/Home.html")'
+        >Home</button
+      >
+      <button
+        class="button"
+        type="button"
+        onclick='location.href=("../en-us/About.html")'
+        >About</button
+      >
+      <button
+        class="button"
+        type="button"
+        onclick='location.href=("../en-us/Project.html")'
+        >Project</button
+      >
+      <button
+        class="button"
+        type="button"
+        onclick='location.href=("../en-us/ACG.html")'
+        >ACG</button
+      >
+    </div>
 
-    div.header{
-        width: 100%;
-        height: 40px;
-        text-align:center;
-    }
-
-    div.body {
-        width: 100%;
-        height: 50px;
-        text-align: center;
-        transform: translateY(100%);
-
-    }
-
-    button {
-        background: #3498db;
-        background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-        background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-        background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-        background-image: -o-linear-gradient(top, #3498db, #2980b9);
-        background-image: linear-gradient(to bottom, #3498db, #2980b9);
-        text-shadow: 1px 1px 3px #666666;
-        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-        color: #000;
-        font-size: 14px;
-        border: 0px;
-        padding: 10px;
-        background: #fff;
-        text-decoration: none;
-        border-radius: 6px;
-        transition-duration: 0.8s;
-    }
-
-    button:hover {
-        background: #FFF0F5;
-        text-decoration: none;
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    }
-
-    tr,td{
-        font-size: 18px;
-    	color:#000000;
-    	background-color:#ffffff;
-    	text-align: left;
-    }
-
-    table {
-	    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	    width:100%;
-	    border-collapse:collapse;
-    }
-
-    td,th {
-        font-size:1em;
-	    border:1px solid #f0f0f0;
-    	padding:3px 7px 2px 7px;
-    }
-
-    tr:nth-child(even){
-        background-color: #f2f2f2;
-    }
-
-    tr:hover {
-        background-color: #000000;
-    }
-
-    th {
-    	font-size:1.1em;
-    	text-align:left;
-    	padding-top:5px;
-    	padding-bottom:4px;
-    	color:#000000;
-    	background-color:#f0f0f0;
-    }
-
-    iframe{
-        width: 330px;
-        height: 80px;
-        float:right;
-        border: 0px;
-        transform: translateY(900%);
-        float:right;
-    }
-
-</style>
-
-<body>
-
-<div class="header">
-    <button class="button" type="button" onclick = 'location.href=("Home.html")'>Home</button>
-    <button class="button" type="button" onclick = 'location.href=("About.html")'>About</button>
-    <button class="button" type="button" onclick = 'location.href=("Project.html")'>Project</button>
-</div>
-
-<div class="body">
-    <table>
-        <tr>
+    <div class="footer">
+      <table class="project-table">
+        <thead>
+          <tr>
             <th>Project</th>
             <th>Language</th>
             <th>Description</th>
-            <th>Link  | (Click Auto Open)</th>
-        </tr>
-        <tr>
-            <td>ResourceManger</td>
-            <td>Java</td>
-            <td>a resource manger it can copy the minecraft pack</td>
-            <td onclick="window.open('https://github.com/PixelSkider/ResourceManger');">https://github.com/PixelSkider/ResourceManger</td>
-        </tr>
-        <tr>
-            <td>Java-Download-Tool</td>
-            <td>Java</td>
-            <td>a download tool it can let you download faster</td>
-            <td onclick="window.open('https://github.com/PixelSkider/Java-Download-Tool');">https://github.com/PixelSkider/Java-Download-Tool</td>
-        </tr>
-        <tr>
-            <td>Villagers-vs-Zombies</td>
-            <td>Java</td>
-            <td>a game villagers shoot the zombies</td>
-            <td onclick="window.open('https://github.com/PixelSkider/Villagers-vs-Zombies');">https://github.com/PixelSkider/Villagers-vs-Zombies</td>
-        </tr>
-        <tr>
-            <td>Minecraft-Health-show-on-led-with-esp32</td>
-            <td>Java and MicroPython</td>
-            <td>can let player health show on led</td>
-            <td onclick="window.open('https://github.com/PixelSkider/Minecraft-Health-show-on-led-with-esp32');">https://github.com/PixelSkider/Minecraft-Health-show-on-led-with-esp32</td>
-        </tr>
-        <tr>
-            <td>BetterTropical</td>
-            <td>Java</td>
-            <td>it can let your tropical can be cooked</td>
-            <td onclick="window.open('https://github.com/PixelSkider/BetterTropical');">https://github.com/PixelSkider/BetterTropical</td>
-        </tr>
-        <tr>
-            <td>Null</td>
-            <td>Null</td>
-            <td>Null</td>
-            <td>Null</td>
-        </tr>
-        <tr>
-            <td>Null</td>
-            <td>Null</td>
-            <td>Null</td>
-            <td>Null</td>
-        </tr>
-        <tr>
-            <td>Null</td>
-            <td>Null</td>
-            <td>Null</td>
-            <td>Null</td>
-        </tr>
-    </table>
-</div>
+            <th>Link | (Click Auto Open)</th>
+          </tr>
+        </thead>
+        <tbody id="project-list"></tbody>
+      </table>
 
-<iframe src="//music.163.com/outchain/player?type=2&id=489970551&auto=0&height=66"></iframe>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          fetch("../resource/en-us/Project.json")
+            .then((response) => response.json())
+            .then((data) => {
+              const projectList = document.getElementById("project-list");
+              data.forEach((project) => {
+                const row = document.createElement("tr");
 
-</body>
+                const titleCell = document.createElement("td");
+                titleCell.textContent = project.title;
+                titleCell.classList.add("title-column");
+
+                const languageCell = document.createElement("td");
+                languageCell.textContent = project.language;
+                languageCell.classList.add("language-column");
+
+                const descriptionCell = document.createElement("td");
+                descriptionCell.textContent = project.description;
+                descriptionCell.classList.add("description-column");
+
+                const linkCell = document.createElement("td");
+                const link = document.createElement("a");
+                link.textContent = project.link;
+                link.onclick = function () {
+                  window.open(project.link);
+                };
+                link.classList.add("link-column");
+                linkCell.appendChild(link);
+
+                row.appendChild(titleCell);
+                row.appendChild(languageCell);
+                row.appendChild(descriptionCell);
+                row.appendChild(linkCell);
+
+                projectList.appendChild(row);
+              });
+            })
+            .catch(
+              (error) =>
+                alert(
+                  "Read File Error,Please contact the webmaster for feedback,Thank u~"
+                ),
+              console.error("Error fetching the project data:", error)
+            );
+        });
+      </script>
+
+      <iframe
+        src="//music.163.com/outchain/player?type=2&id=489970551&auto=0&height=66"
+      ></iframe>
+    </div>
+  </body>
 </html>

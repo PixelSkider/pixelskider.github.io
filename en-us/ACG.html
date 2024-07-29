@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kalud's Website</title>
+    <link rel="icon" href="../resource/icon.png" sizes="16x16" />
+    <link rel="stylesheet" href="../css/acg.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <button
+        class="button"
+        type="button"
+        onclick='location.href=("../en-us/Home.html")'
+        >Home</button
+      >
+      <button
+        class="button"
+        type="button"
+        onclick='location.href=("../en-us/About.html")'
+        >About</button
+      >
+      <button
+        class="button"
+        type="button"
+        onclick='location.href=("../en-us/Project.html")'
+        >Project</button
+      >
+      <button
+        class="button"
+        type="button"
+        onclick='location.href=("../en-us/ACG.html")'
+        >ACG</button
+      >
+      <div class="footer">
+        <h1
+          >ACG Personal evaluation (Include GAL,Drama I was lazy to
+          Translation...)</h1
+        >
+        <table class="acg-table">
+          <thead>
+            <tr>
+              <th>Name | (Have Shorthand)</th>
+              <th>Fraction</th>
+              <th>Evaluation | (Some Forget)</th>
+            </tr>
+          </thead>
+          <tbody id="acg-list"></tbody>
+        </table>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            fetch("../resource/en-us/ACG.json")
+              .then((response) => response.json())
+              .then((data) => {
+                const acgList = document.getElementById("acg-list");
+                data.forEach((acg) => {
+                  const row = document.createElement("tr");
+
+                  const titleCell = document.createElement("td");
+                  titleCell.textContent = acg.title;
+                  titleCell.classList.add("title-column");
+
+                  const ratingCell = document.createElement("td");
+                  ratingCell.textContent = acg.rating;
+                  ratingCell.classList.add("rating-column");
+
+                  const reviewCell = document.createElement("td");
+                  reviewCell.textContent = acg.review;
+
+                  row.appendChild(titleCell);
+                  row.appendChild(ratingCell);
+                  row.appendChild(reviewCell);
+
+                  acgList.appendChild(row);
+                });
+              })
+              .catch(
+                (error) =>
+                  alert(
+                    "Read File Error,Please contact the webmaster for feedback,Thank u~"
+                  ),
+                console.error("Error fetching the acg data:", error)
+              );
+          });
+        </script>
+      </div>
+      <iframe
+        src="//music.163.com/outchain/player?type=2&id=489970551&auto=0&height=66"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </body>
+</html>
