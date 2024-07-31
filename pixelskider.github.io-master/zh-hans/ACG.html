@@ -46,6 +46,7 @@
               <th>名称 | (有简写)</th>
               <th>分数</th>
               <th>评价 | (有的忘记了)</th>
+              <th>资源 | (点击跳转)</th>
             </tr>
           </thead>
           <tbody id="acg-list"></tbody>
@@ -71,9 +72,27 @@
                   const reviewCell = document.createElement("td");
                   reviewCell.textContent = acg.review;
 
+                  const linkCell = document.createElement("td");
+                  const link = document.createElement("a");
+                  link.textContent = acg.name;
+
+                  link.onclick = function (event) {
+                    event.preventDefault();
+                    const confirmMessage =
+                      "你确定要跳转到以下链接吗? (失效可反馈 侵权删)\n(对于任何通过本网站链接到的第三方网站，我们不对其内容负责。使用本网站即表示您同意以上免责声明)\n" +
+                      acg.link;
+                    if (confirm(confirmMessage)) {
+                      window.open(acg.link, "_blank");
+                    }
+                  };
+                  link.classList.add("link-column");
+                  link.href = acg.link;
+                  linkCell.appendChild(link);
+
                   row.appendChild(titleCell);
                   row.appendChild(ratingCell);
                   row.appendChild(reviewCell);
+                  row.appendChild(linkCell);
 
                   acgList.appendChild(row);
                 });
