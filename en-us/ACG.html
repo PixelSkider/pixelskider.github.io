@@ -48,6 +48,7 @@
               <th>Name | (Have Shorthand)</th>
               <th>Fraction</th>
               <th>Evaluation | (Some Forget)</th>
+              <th>Resource | (Click Auto Open)</th>
             </tr>
           </thead>
           <tbody id="acg-list"></tbody>
@@ -55,7 +56,7 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", function () {
-            fetch("../resource/en-us/ACG.json")
+            fetch("../resource/zh-hans/ACG.json")
               .then((response) => response.json())
               .then((data) => {
                 const acgList = document.getElementById("acg-list");
@@ -73,9 +74,27 @@
                   const reviewCell = document.createElement("td");
                   reviewCell.textContent = acg.review;
 
+                  const linkCell = document.createElement("td");
+                  const link = document.createElement("a");
+                  link.textContent = acg.name;
+
+                  link.onclick = function (event) {
+                    event.preventDefault();
+                    const confirmMessage =
+                      "Are you sure you want to jump to the following link? (Invalid can be fed back and deleted for infringement)\n(We are not responsible for the content of any third-party websites linked through this website. By using this website, you agree to the above disclaimer)\n" +
+                      acg.link;
+                    if (confirm(confirmMessage)) {
+                      window.open(acg.link, "_blank");
+                    }
+                  };
+                  link.classList.add("link-column");
+                  link.href = acg.link;
+                  linkCell.appendChild(link);
+
                   row.appendChild(titleCell);
                   row.appendChild(ratingCell);
                   row.appendChild(reviewCell);
+                  row.appendChild(linkCell);
 
                   acgList.appendChild(row);
                 });
