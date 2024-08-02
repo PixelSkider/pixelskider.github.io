@@ -142,3 +142,21 @@ button.button-language:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.message {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    position: absolute;
+    font-size: 15px;
+    animation: float 2s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
