@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <script src="../javascript/script.js"></script>
     <div class="header">
       <button
         class="button"
@@ -76,8 +77,14 @@
                 const linkCell = document.createElement("td");
                 const link = document.createElement("a");
                 link.textContent = project.link;
-                link.onclick = function () {
-                  window.open(project.link);
+                link.onclick = function (event) {
+                  event.preventDefault();
+                  const confirmMessage =
+                    "Are you sure you want to jump to the following link?\n(We are not responsible for the content of any third-party websites linked through this website. By using this website, you agree to the above disclaimer)\n" +
+                    project.link;
+                  if (confirm(confirmMessage)) {
+                    window.open(project.link, "_blank");
+                  }
                 };
                 link.classList.add("link-column");
                 linkCell.appendChild(link);

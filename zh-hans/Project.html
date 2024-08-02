@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <script src="../javascript/script.js"></script>
     <div class="header">
       <button
         class="button"
@@ -76,8 +77,14 @@
                 const linkCell = document.createElement("td");
                 const link = document.createElement("a");
                 link.textContent = project.link;
-                link.onclick = function () {
-                  window.open(project.link);
+                link.onclick = function (event) {
+                  event.preventDefault();
+                  const confirmMessage =
+                    "你确定要跳转到以下链接吗?\n(对于任何通过本网站链接到的第三方网站，我们不对其内容负责。使用本网站即表示您同意以上免责声明)\n" +
+                    project.link;
+                  if (confirm(confirmMessage)) {
+                    window.open(acg.project, "_blank");
+                  }
                 };
                 link.classList.add("link-column");
                 linkCell.appendChild(link);
