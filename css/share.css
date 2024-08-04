@@ -1,0 +1,75 @@
+body {
+    background-color: #F1F1F1;
+}
+
+.header {
+    width: 100%;
+    height: 40px;
+    text-align:center;
+}
+
+iframe {
+    width: 330px;
+    height: 80px;
+    border: 0;
+    position:absolute;
+    right: 3px;
+    bottom: 5px;
+}
+
+img {
+    width: 250px;
+    height: 150px;
+    position:absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
+h1{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:30px;
+}
+
+h2 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    padding: 200px 0;
+    -webkit-animation: light 1.5s ease-in-out infinite alternate;
+}
+
+button.top {
+    text-shadow: 1px 1px 3px #666666;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000;
+    border: 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 6px;
+    transition-duration: 0.8s;
+}
+
+button.top:hover {
+    background: #FFF0F5;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.message {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    position: absolute;
+    font-size: 15px;
+    animation: float 2s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}

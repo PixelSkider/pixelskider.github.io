@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <title>Kalud's Website</title>
     <link rel="icon" href="../resource/icon.png" sizes="16x16" />
-    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/share.css" />
+    <link rel="stylesheet" href="../css/other/home.css" />
+    <script src="../javascript/script.js"></script>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -12,45 +14,55 @@
   </head>
 
   <body>
-    <script src="../javascript/script.js"></script>
     <div class="header">
-      <div class="header">
+      <div class="left">
         <button
-          class="button"
-          type="button"
-          onclick='location.href=("../en-us/Home.html")'
-          >Home</button
-        >
-        <button
-          class="button"
-          type="button"
-          onclick='location.href=("../en-us/About.html")'
-          >About</button
-        >
-        <button
-          class="button"
-          type="button"
-          onclick='location.href=("../en-us/Project.html")'
-          >Project</button
-        >
-        <button
-          class="button"
-          type="button"
-          onclick='location.href=("../en-us/ACG.html")'
-          >ACG</button
-        >
+          class="icon_button"
+          style="background: url(../resource/bilibili.png) no-repeat"
+          onclick="remindURL('https://space.bilibili.com/1686297601')"
+        ></button>
 
-      <div class="dropdown">
-        <button class="button-language" position="fixed">Language</button>
+        <button
+          class="icon_button"
+          style="background: url(../resource/github.png) no-repeat"
+          onclick="remindURL('https://github.com/PixelSkider')"
+        >
+        </button>
+
+        <button
+          class="icon_button"
+          style="background: url(../resource/discord.png) no-repeat"
+          onclick="remindText('UserName: mifea \nI donot use Discord often, and you can send a private message to bilibili if you have something')"
+        >
+        </button>
+      </div>
+
+      <div class="right">
+        <button class="button-language">Language</button>
         <div class="dropdown-content">
           <a href="../zh-hans/Home.html">ZH</a>
           <a href="../en-us/Home.html">US</a>
         </div>
       </div>
+
+      <div class="centre">
+        <button class="top" onclick='location.href=("../en-us/Home.html")'>
+          Home
+        </button>
+        <button class="top" onclick='location.href=("../en-us/About.html")'>
+          About
+        </button>
+        <button class="top" onclick='location.href=("../en-us/Project.html")'>
+          Project
+        </button>
+        <button class="top" onclick='location.href=("../en-us/ACG.html")'>
+          ACG
+        </button>
+      </div>
     </div>
 
     <div class="footer">
-      <h2>Hi👋,Welcome to my Blog</h2>
+      <h2>Hi👋,Welcome to my blog</h2>
       <img src="../resource/Animation.gif" />
 
       <iframe

@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <title>Kalud的网站</title>
     <link rel="icon" href="../resource/icon.png" sizes="16x16" />
-    <link rel="stylesheet" href="../css/acg.css" />
+    <link rel="stylesheet" href="../css/share.css" />
+    <link rel="stylesheet" href="../css/other/acg.css" />
+    <script src="../javascript/script.js"></script>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -12,104 +14,81 @@
   </head>
 
   <body>
-    <script src="../javascript/script.js"></script>
     <div class="header">
-      <button
-        class="button"
-        type="button"
-        onclick='location.href=("../zh-hans/Home.html")'
-        >主页</button
-      >
-      <button
-        class="button"
-        type="button"
-        onclick='location.href=("../zh-hans/About.html")'
-        >关于</button
-      >
-      <button
-        class="button"
-        type="button"
-        onclick='location.href=("../zh-hans/Project.html")'
-        >项目</button
-      >
-      <button
-        class="button"
-        type="button"
-        onclick='location.href=("../zh-hans/ACG.html")'
-        >ACG</button
-      >
+      <button class="top" onclick='location.href=("../zh-hans/Home.html")'>
+        主页
+      </button>
+      <button class="top" onclick='location.href=("../zh-hans/About.html")'>
+        关于
+      </button>
+      <button class="top" onclick='location.href=("../zh-hans/Project.html")'>
+        项目
+      </button>
+      <button class="top" onclick='location.href=("../zh-hans/ACG.html")'>
+        ACG
+      </button>
+    </div>
+    <h1>ACG个人评价 (包含GAL,番剧...)</h1>
+    <div class="footer">
+      <table class="acg-table">
+        <thead>
+          <tr>
+            <th>名称 | (有简写)</th>
+            <th>分数</th>
+            <th>评价 | (有的忘记了)</th>
+            <th>资源 | (点击跳转)</th>
+          </tr>
+        </thead>
+        <tbody id="acg-list"></tbody>
+      </table>
 
-      <div class="footer">
-        <h1>ACG个人评价 (包含GAL,番剧...)</h1>
-        <table class="acg-table">
-          <thead>
-            <tr>
-              <th>名称 | (有简写)</th>
-              <th>分数</th>
-              <th>评价 | (有的忘记了)</th>
-              <th>资源 | (点击跳转)</th>
-            </tr>
-          </thead>
-          <tbody id="acg-list"></tbody>
-        </table>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          fetch("../resource/zh-hans/ACG.json")
+            .then((response) => response.json())
+            .then((data) => {
+              const acgList = document.getElementById("acg-list");
+              data.forEach((acg) => {
+                const row = document.createElement("tr");
 
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            fetch("../resource/zh-hans/ACG.json")
-              .then((response) => response.json())
-              .then((data) => {
-                const acgList = document.getElementById("acg-list");
-                data.forEach((acg) => {
-                  const row = document.createElement("tr");
+                const titleCell = document.createElement("td");
+                titleCell.textContent = acg.title;
+                titleCell.classList.add("title-column");
 
-                  const titleCell = document.createElement("td");
-                  titleCell.textContent = acg.title;
-                  titleCell.classList.add("title-column");
+                const ratingCell = document.createElement("td");
+                ratingCell.textContent = acg.rating;
+                ratingCell.classList.add("rating-column");
 
-                  const ratingCell = document.createElement("td");
-                  ratingCell.textContent = acg.rating;
-                  ratingCell.classList.add("rating-column");
+                const reviewCell = document.createElement("td");
+                reviewCell.textContent = acg.review;
 
-                  const reviewCell = document.createElement("td");
-                  reviewCell.textContent = acg.review;
+                const linkCell = document.createElement("td");
+                const link = document.createElement("a");
+                link.textContent = acg.name;
 
-                  const linkCell = document.createElement("td");
-                  const link = document.createElement("a");
-                  link.textContent = acg.name;
+                link.onclick = function (event) {
+                  event.preventDefault();
+                  remindURL(acg.link);
+                };
+                link.classList.add("link-column");
+                link.href = acg.link;
+                linkCell.appendChild(link);
 
-                  link.onclick = function (event) {
-                    event.preventDefault();
-                    const confirmMessage =
-                      "你确定要跳转到以下链接吗? (失效可反馈 侵权删)\n(对于任何通过本网站链接到的第三方网站，我们不对其内容负责。使用本网站即表示您同意以上免责声明)\n" +
-                      acg.link;
-                    if (confirm(confirmMessage)) {
-                      window.open(acg.link, "_blank");
-                    }
-                  };
-                  link.classList.add("link-column");
-                  link.href = acg.link;
-                  linkCell.appendChild(link);
+                row.appendChild(titleCell);
+                row.appendChild(ratingCell);
+                row.appendChild(reviewCell);
+                row.appendChild(linkCell);
 
-                  row.appendChild(titleCell);
-                  row.appendChild(ratingCell);
-                  row.appendChild(reviewCell);
-                  row.appendChild(linkCell);
-
-                  acgList.appendChild(row);
-                });
-              })
-              .catch(
-                (error) => (error) =>
-                  alert("内容读取错误,请联系站主进行反馈,谢谢啦"),
-                console.error("Error fetching the acg data:", error)
-              );
-          });
-        </script>
-      </div>
-      <iframe
-        src="//music.163.com/outchain/player?type=2&id=489970551&auto=0&height=66"
-        frameborder="0"
-      ></iframe>
+                acgList.appendChild(row);
+              });
+            })
+            .catch(
+              (error) => (error) =>
+                alert("内容读取错误,请联系站主进行反馈,谢谢啦"),
+              console.error("Error fetching the acg data:", error)
+            );
+        });
+      </script>
     </div>
   </body>
 </html>

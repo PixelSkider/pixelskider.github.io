@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <title>Kalud's Website</title>
     <link rel="icon" href="../resource/icon.png" sizes="16x16" />
-    <link rel="stylesheet" href="../css/project.css" />
+    <link rel="stylesheet" href="../css/share.css" />
+    <link rel="stylesheet" href="../css/other/project.css" />
+    <script src="../javascript/script.js"></script>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -12,34 +14,21 @@
   </head>
 
   <body>
-    <script src="../javascript/script.js"></script>
     <div class="header">
-      <button
-        class="button"
-        type="button"
-        onclick='location.href=("../en-us/Home.html")'
-        >Home</button
-      >
-      <button
-        class="button"
-        type="button"
-        onclick='location.href=("../en-us/About.html")'
-        >About</button
-      >
-      <button
-        class="button"
-        type="button"
-        onclick='location.href=("../en-us/Project.html")'
-        >Project</button
-      >
-      <button
-        class="button"
-        type="button"
-        onclick='location.href=("../en-us/ACG.html")'
-        >ACG</button
-      >
+      <button class="top" onclick='location.href=("../en-us/Home.html")'>
+        Home
+      </button>
+      <button class="top" onclick='location.href=("../en-us/About.html")'>
+        About
+      </button>
+      <button class="top" onclick='location.href=("../en-us/Project.html")'>
+        Project
+      </button>
+      <button class="top" onclick='location.href=("../en-us/ACG.html")'>
+        ACG
+      </button>
     </div>
-
+    <h1>Open Source Projects</h1>
     <div class="footer">
       <table class="project-table">
         <thead>
@@ -79,12 +68,7 @@
                 link.textContent = project.link;
                 link.onclick = function (event) {
                   event.preventDefault();
-                  const confirmMessage =
-                    "Are you sure you want to jump to the following link?\n(We are not responsible for the content of any third-party websites linked through this website. By using this website, you agree to the above disclaimer)\n" +
-                    project.link;
-                  if (confirm(confirmMessage)) {
-                    window.open(project.link, "_blank");
-                  }
+                  remindURL(project.link, "en-us");
                 };
                 link.classList.add("link-column");
                 linkCell.appendChild(link);
@@ -106,10 +90,6 @@
             );
         });
       </script>
-
-      <iframe
-        src="//music.163.com/outchain/player?type=2&id=489970551&auto=0&height=66"
-      ></iframe>
     </div>
   </body>
 </html>
