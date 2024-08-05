@@ -1,92 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Kalud的网站</title>
-    <link rel="icon" href="../resource/icon.png" sizes="16x16" />
-    <link rel="stylesheet" href="../css/share.css" />
-    <link rel="stylesheet" href="../css/other/project.css" />
-    <script src="../javascript/script.js"></script>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-  </head>
 
-  <body>
-    <div class="header">
-      <button class="top" onclick='location.href=("../zh-hans/Home.html")'>
-        主页
-      </button>
-      <button class="top" onclick='location.href=("../zh-hans/About.html")'>
-        关于
-      </button>
-      <button class="top" onclick='location.href=("../zh-hans/Project.html")'>
-        项目
-      </button>
-      <button class="top" onclick='location.href=("../zh-hans/ACG.html")'>
-        ACG
-      </button>
-    </div>
-    <h1>开源项目</h1>
-    <div class="footer">
-      <table class="project-table">
-        <thead>
-          <tr>
-            <th>项目</th>
-            <th>语言</th>
-            <th>解释</th>
-            <th>链接 | (点击自动跳转)</th>
-          </tr>
-        </thead>
-        <tbody id="project-list"></tbody>
-      </table>
+<head>
+  <meta charset="UTF-8" />
+  <title>Kalud的网站</title>
+  <link rel="icon" href="../resource/icon.png" sizes="16x16" />
+  <link rel="stylesheet" href="../css/share.css" />
+  <script src="../javascript/script.js"></script>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          fetch("../resource/zh-hans/Project.json")
-            .then((response) => response.json())
-            .then((data) => {
-              const projectList = document.getElementById("project-list");
-              data.forEach((project) => {
-                const row = document.createElement("tr");
+<body>
+  <div class="header">
+    <button class="top" onclick='location.href=("../zh-hans/Home.html")'>
+      主页
+    </button>
+    <button class="top" onclick='location.href=("../zh-hans/About.html")'>
+      关于
+    </button>
+    <button class="top" onclick='location.href=("../zh-hans/Project.html")'>
+      项目
+    </button>
+    <button class="top" onclick='location.href=("../zh-hans/ACG.html")'>
+      ACG
+    </button>
+  </div>
+  <h1>开源项目</h1>
+  <div class="table">
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>项目</th>
+          <th>语言</th>
+          <th>解释</th>
+          <th>链接 | (点击自动跳转)</th>
+        </tr>
+      </thead>
+      <tbody id="project-list"></tbody>
+    </table>
 
-                const titleCell = document.createElement("td");
-                titleCell.textContent = project.title;
-                titleCell.classList.add("title-column");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("../resource/zh-hans/Project.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const projectList = document.getElementById("project-list");
+            data.forEach((project) => {
+              const row = document.createElement("tr");
 
-                const languageCell = document.createElement("td");
-                languageCell.textContent = project.language;
-                languageCell.classList.add("language-column");
+              const titleCell = document.createElement("td");
+              titleCell.textContent = project.title;
+              titleCell.classList.add("title-column");
 
-                const descriptionCell = document.createElement("td");
-                descriptionCell.textContent = project.description;
-                descriptionCell.classList.add("description-column");
+              const languageCell = document.createElement("td");
+              languageCell.textContent = project.language;
+              languageCell.classList.add("language-column");
 
-                const linkCell = document.createElement("td");
-                const link = document.createElement("a");
-                link.textContent = project.link;
-                link.onclick = function (event) {
-                  event.preventDefault();
-                  remindURL(project.link);
-                };
-                link.classList.add("link-column");
-                linkCell.appendChild(link);
+              const descriptionCell = document.createElement("td");
+              descriptionCell.textContent = project.description;
+              descriptionCell.classList.add("description-column");
 
-                row.appendChild(titleCell);
-                row.appendChild(languageCell);
-                row.appendChild(descriptionCell);
-                row.appendChild(linkCell);
+              const linkCell = document.createElement("td");
+              const link = document.createElement("a");
+              link.textContent = project.link;
+              link.onclick = function (event) {
+                event.preventDefault();
+                remindURL(project.link);
+              };
+              link.classList.add("link-column");
+              linkCell.appendChild(link);
 
-                projectList.appendChild(row);
-              });
-            })
-            .catch(
-              (error) => alert("内容读取错误,请联系站主进行反馈,谢谢啦"),
-              console.error("Error fetching the project data:", error)
-            );
-        });
-      </script>
-    </div>
-  </body>
+              row.appendChild(titleCell);
+              row.appendChild(languageCell);
+              row.appendChild(descriptionCell);
+              row.appendChild(linkCell);
+
+              projectList.appendChild(row);
+            });
+          })
+          .catch(
+            (error) => alert("内容读取错误,请联系站主进行反馈,谢谢啦"),
+            console.error("Error fetching the project data:", error)
+          );
+      });
+    </script>
+  </div>
+</body>
+
 </html>
