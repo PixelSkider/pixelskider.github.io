@@ -14,18 +14,20 @@ function createMessage(x, y) {
   fetch("../resource/zh-hans/Messages.json")
     .then((response) => response.json())
     .then((data) => {
-      const messages = data.messages;
-      const colors = data.colors;
+    const messages = data.messages;
+    const colors = data.colors;
 
-      const message = document.createElement("div");
-      message.className = "message";
-      message.textContent =
-        messages[Math.floor(Math.random() * messages.length)];
-      message.style.position = "absolute";
-      message.style.color = colors[Math.floor(Math.random() * colors.length)];
+    const message = document.createElement("div");
+    message.className = "message";
+    message.textContent =
+    messages[Math.floor(Math.random() * messages.length)];
+    message.style.position = "absolute";
+    message.style.color = colors[Math.floor(Math.random() * colors.length)];
 
-      document.body.appendChild(message);
+    document.body.appendChild(message);
 
+    // 延迟执行布局计算
+    requestAnimationFrame(() => {
       // 获取元素的宽度和高度
       const messageWidth = message.offsetWidth;
       const messageHeight = message.offsetHeight;
@@ -40,11 +42,12 @@ function createMessage(x, y) {
 
       message.style.left = `${x}px`;
       message.style.top = `${y}px`;
+    });
 
-      setTimeout(() => {
-        message.remove();
-      }, 2000);
-    })
+    setTimeout(() => {
+      message.remove();
+    }, 2000);
+  })
     .catch((error) => console.error("Error fetching the messages:", error));
 }
 

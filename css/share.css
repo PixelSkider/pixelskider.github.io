@@ -76,8 +76,21 @@ body {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     position: absolute;
     font-size: 0.9em;
-    animation: float 2s linear infinite;
+    animation: float 2s ease-in-out;
 }
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* 小幅度的上下浮动 */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 .about {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -101,14 +114,6 @@ iframe {
     border: 0;
 	position:absolute;
 	right:5px;
-	bottom:5px;
-}
-
-img {
-    width: 250px;
-    height: 150px;
-    position:absolute;
-	left:5px;
 	bottom:5px;
 }
 
@@ -205,14 +210,5 @@ table td {
     }
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-}
+
 
