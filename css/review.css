@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #444;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+main {
+  padding: 2rem;
+  background-color: #333;
+  color: #fff;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 8px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.anime-item {
+  background-color: #333;
+  border: 1px solid #ddd;
+  padding: 0.4rem;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.anime-item h2 {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.anime-item p {
+  color: #fff;
+}
+
+.anime-item a {
+  color: #33CCFF;
+  text-decoration: none;
+}
+
+.anime-item a:hover {
+  text-decoration: underline;
+  color: #BBFFEE;
+  transition: background-color 0.3s, color 0.3s;
+}

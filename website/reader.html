@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章</title>
+    <link rel="stylesheet" href="../css/reader.css">
+    <link rel="icon" href="../resource/icon.png" sizes="16x16"/>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="article.html">返回</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div id="title"></div>
+    <div id="content"></div>
+    <script>
+        const currentTitle = localStorage.getItem('currentArticleTitle');
+        if (currentTitle) {
+            const txtTitle = localStorage.getItem(`article-${currentTitle}-title`);
+            const txtTime = localStorage.getItem(`article-${currentTitle}-time`);
+            const txtContent = localStorage.getItem(`article-${currentTitle}-content`);
+            const displayTitle = txtTitle || '加载文章标题出错!';
+            const displayTime = txtTime || '加载文章日期出错!';
+            const displayContent = txtContent || '加载文章内容出错!';
+            const text = `${displayTitle} - ${displayTime}`;
+            document.getElementById('title').textContent = text;
+            document.getElementById('content').textContent = displayContent;
+        } else {
+            document.getElementById('title').textContent = '没有找到该文章';
+            document.getElementById('content').textContent = '文章内容加载失败';
+        }
+
+        document.getElementById('title').classList.add('articleTitle');
+        document.getElementById('content').classList.add('articleContent');
+    </script>
+</main>
+
+<footer>
+    <p>&copy; 2025 Kalud</p>
+</footer>
+<script src="../javascript/article.js"></script>
+</body>
+</html>
