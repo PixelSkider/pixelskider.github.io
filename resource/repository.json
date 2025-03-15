@@ -1,21 +1,33 @@
 [
   {
-    "title": "多线程下载工具",
+    "title": "Java-Download-Tool",
     "language": "Java",
-    "description": "一个可以让你下载更快速的多线程下载器",
+    "description": "一个可以让你下载更快速的多线程下载器,初学Java写的垃圾",
     "link": "https://github.com/PixelSkider/ResourceManger"
   },
   {
-    "title": "村民大战僵尸",
+    "title": "Villagers-vs-Zombies ",
     "language": "Java",
-    "description": "一个村民射击僵尸的游戏",
-    "link": "https://github.com/PixelSkider/Villagers-vs-Zombies"
+    "description": "使用Java Swing写的一个小游戏,基础功能都有,还差联机功能",
+    "link": "https://github.com/PixelSkider/BetterTropical"
   },
   {
-    "title": "Minecraft-Health-show-on-led-with-esp32",
+    "title": "Minecraft-Health-OLED",
     "language": "Java And MicroPython",
-    "description": "OLED屏幕显示MC玩家血量",
-    "link": "https://github.com/PixelSkider/Minecraft-Health-show-on-led-with-esp32"
+    "description": "使用ESP32与OLED屏幕来显示玩家的血量,采用TCP局域网通讯技术",
+    "link": "https://github.com/PixelSkider/Minecraft-Health-OLED"
+  },
+  {
+    "title": "DesktopManager",
+    "language": "Java",
+    "description": "可以用来隐藏你的桌面的任务栏和图标,这样你就可以欣赏你的壁纸了",
+    "link": "https://github.com/PixelSkider/DesktopManager"
+  },
+  {
+    "title": "BetterTropical",
+    "language": "Java",
+    "description": "给热带鱼添加了配方,这个Mod承载了我发Mod赚大钱的梦想,结果审核都没过",
+    "link": "https://github.com/PixelSkider/BetterTropical"
   },
   {
     "title": "待添加...",
