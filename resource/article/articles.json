@@ -2,11 +2,11 @@
   {
     "time": "2025/3/16",
     "title": "第一个周记",
-    "file": "../resource/article/articles/article2.txt"
+    "file": "../resource/article/articles/article2/article2.md"
   },
   {
     "time": "2025/3/15",
     "title": "Hello,World!",
-    "file": "../resource/article/articles/article1.txt"
+    "file": "../resource/article/articles/article1/article1.md"
   }
 ]

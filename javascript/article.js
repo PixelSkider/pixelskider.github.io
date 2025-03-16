@@ -24,7 +24,7 @@ async function loadArticle(file, title) {
   try {
     const txtResponse = await fetch(file);
     if (!txtResponse.ok) {
-      throw new Error('无法读取txt文件');
+      throw new Error('无法读取文件');
     }
     const txtContent = await txtResponse.text();
     localStorage.setItem(`article-${title}-content`, txtContent);
