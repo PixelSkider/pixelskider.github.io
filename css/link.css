@@ -1,0 +1,22 @@
+.link-item {
+  border: 3px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+p {
+  color: #fff;
+}
+
+a {
+  color: #33CCFF;
+}
+
+a:hover {
+  color: #00ffbf;
+}

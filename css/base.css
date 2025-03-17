@@ -13,10 +13,6 @@ header {
   text-align: center;
 }
 
-header h1 {
-  margin: 0;
-}
-
 nav ul {
   list-style: none;
   padding: 0;
@@ -50,7 +46,7 @@ main {
   background-color: #333;
   color: #fff;
   margin: 30px auto;
-  max-width: 900px;
+  max-width: 50%;
   border-radius: 8px;
 }
 
@@ -62,30 +58,18 @@ ul li {
   margin-bottom: 10px;
 }
 
-.repository-item {
-  background-color: #333;
-  border: 1px solid #ddd;
-  padding: 0.4rem;
-  margin-bottom: 15px;
-  border-radius: 10px;
-}
-
-.repository-item h2 {
-  color: #fff;
-  font-size: 1rem;
-}
-
-.repository-item p {
+h2 {
   color: #fff;
 }
 
-.repository-item a {
-  color: #33CCFF;
+a {
+  font-size: 1.0rem;
+  color: #fff;
   text-decoration: none;
 }
 
-.repository-item a:hover {
+a:hover {
   text-decoration: underline;
   color: #BBFFEE;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 1s, color 1s;
 }
