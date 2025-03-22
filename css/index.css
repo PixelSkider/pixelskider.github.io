@@ -6,60 +6,50 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #333;
+    color: #fff;
 }
 
 .welcome-container {
     text-align: center;
-    padding: 40px 30px;
-    border-radius: 12px;
+    padding: 20px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #444;
+    width: 20%;
 }
 
 .welcome-container h1 {
-    margin: 0;
-    font-size: 38px;
+    margin-top: 10px;
+    font-size: 2rem;
     font-weight: bold;
 }
 
-.button {
-    margin: 10px 0;
-    padding: 10px 20px;
-    font-size: 15px;
+.enter-button {
+    padding: 10px;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    width: 160px;
-}
-
-.theme {
-    background-color: #333;
-    color: #fff;
-}
-
-.theme .welcome-container {
-    background-color: #444;
-}
-
-.theme .enter-button {
+    width: 30%;
     background-color: #fff;
     color: #333;
 }
 
-.theme .enter-button:hover {
+.enter-button:hover {
     background-color: #444;
     color: #fff;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.image {
+    width: 20%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.enter-button {
-    margin-top: 30px;
+.image:hover {
+    transform: scale(1.2);
 }
