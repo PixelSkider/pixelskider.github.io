@@ -16,19 +16,20 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #444;
-    width: 20%;
+    width: 20vw;
 }
 
 .welcome-container h1 {
+    word-wrap: break-word;
     margin-top: 10px;
-    font-size: 2vw;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 .enter-button {
     width: 50%;
     height: 2rem;
-    font-size: 1vw;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
     border-radius: 8px;
@@ -52,4 +53,10 @@ img {
 
 img:hover {
     transform: scale(1.2);
+}
+
+@media (max-width: 800px) {
+    .welcome-container {
+        width: 70vw;
+    }
 }
