@@ -119,11 +119,14 @@ img {
   width: 30px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   main {
     max-width: 80%;
   }
   img {
+    max-width: 80%;
+  }
+  .link {
     max-width: 80%;
   }
 }
